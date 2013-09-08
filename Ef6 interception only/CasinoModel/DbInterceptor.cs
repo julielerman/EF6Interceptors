@@ -13,42 +13,42 @@ public class NLogEfCommandInterceptor : IDbCommandInterceptor
     public void NonQueryExecuting(
     DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext, CommandType.NonQueryExecuting);
         LogIfNonAsync(command, interceptionContext);
     }
 
     public void NonQueryExecuted(
     DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext, CommandType.NonQueryExecuted);
         LogIfError(command, interceptionContext);
     }
 
     public void ReaderExecuting(
     DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext,CommandType.ReaderExecuting);
         LogIfNonAsync(command, interceptionContext);
     }
 
     public void ReaderExecuted(
     DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext, CommandType.ReaderExecuted);
         LogIfError(command, interceptionContext);
     }
 
     public void ScalarExecuting(
     DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext, CommandType.ScalarExecuting);
         LogIfNonAsync(command, interceptionContext);
     }
 
     public void ScalarExecuted(
     DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
     {
-        LogTrace(command, interceptionContext);
+        LogTrace(command, interceptionContext, CommandType.ScalarExecuted);
         LogIfError(command, interceptionContext);
     }
 
@@ -68,7 +68,7 @@ public class NLogEfCommandInterceptor : IDbCommandInterceptor
             command.CommandText, interceptionContext.Exception);
         }
     }
-    private void LogTrace<TResult>(DbCommand command, DbCommandInterceptionContext<TResult> interceptionContext)
+    private void LogTrace<TResult>(DbCommand command, DbCommandInterceptionContext<TResult> interceptionContext, CommandType commandType)
     {
         var initFlags = new string[]
         {
@@ -86,12 +86,23 @@ public class NLogEfCommandInterceptor : IDbCommandInterceptor
 
         if (initFlags.Any(x => command.CommandText.Contains(x)))
         {
-            Logger.Info(command.CommandText);
+            Logger.Info(command.CommandText + " " + commandType.ToString());
 
         }
         else
         {
-            Logger.Trace(command.CommandText);
+            Logger.Trace(command.CommandText + " " + commandType.ToString());
         }
+    }
+
+    private enum CommandType
+    {
+        NonQueryExecuting=1,
+        NonQueryExecuted=2,
+        ReaderExecuting=3,
+        ReaderExecuted=4,
+        ScalarExecuting=5,
+        ScalarExecuted=6
+
     }
 }
