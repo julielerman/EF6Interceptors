@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer.CasinoModel", "CasinoModel\DataLayer.CasinoModel.csproj", "{FEF66ABE-A8EA-4329-BB08-BB0B8B471346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainClasses", "DomainClasses\DomainClasses.csproj", "{C358BF77-6E8D-4500-8DC9-DA4D6D9BEEA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTests", "AutomatedTests\AutomatedTests.csproj", "{BAEECD3E-7B2C-4529-9C18-A1AAA26CD690}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEF66ABE-A8EA-4329-BB08-BB0B8B471346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF66ABE-A8EA-4329-BB08-BB0B8B471346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF66ABE-A8EA-4329-BB08-BB0B8B471346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF66ABE-A8EA-4329-BB08-BB0B8B471346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C358BF77-6E8D-4500-8DC9-DA4D6D9BEEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C358BF77-6E8D-4500-8DC9-DA4D6D9BEEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C358BF77-6E8D-4500-8DC9-DA4D6D9BEEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C358BF77-6E8D-4500-8DC9-DA4D6D9BEEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAEECD3E-7B2C-4529-9C18-A1AAA26CD690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEECD3E-7B2C-4529-9C18-A1AAA26CD690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEECD3E-7B2C-4529-9C18-A1AAA26CD690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEECD3E-7B2C-4529-9C18-A1AAA26CD690}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
